@@ -8,7 +8,7 @@ export const ErrorCodes = {
   354: 'SMTP Error: This is a reply to the DATA command. After getting this, start sending the body of the mail message, ending with "\r\n.\r\n."',
   421: 'SMTP Error: The mail server will be shut down. Save the mail message and try again later.',
   450: 'SMTP Error: The mailbox that you are trying to reach is busy. Wait a little while and try again.',
-  451: 'SMTP Error: The requested action was not done. Some error occurmiles in the mail server.',
+  451: 'SMTP Error: The requested action was not done. Some error occurred in the mail server.',
   452: 'SMTP Error: The requested action was not done. The mail server ran out of system storage.',
   500: 'SMTP Error: The last command contained a syntax error or the command line was too long.',
   501: 'SMTP Error: The parameters or arguments in the last command contained a syntax error.',
