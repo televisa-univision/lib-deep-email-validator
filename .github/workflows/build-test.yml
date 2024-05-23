@@ -62,7 +62,7 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@v2
         with:
-          node-version: '20.8.1'
+          node-version: "20"
 
       - name: Download Package Dependencies
         uses: actions/download-artifact@v2
