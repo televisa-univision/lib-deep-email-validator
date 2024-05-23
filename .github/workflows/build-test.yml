@@ -58,6 +58,11 @@ jobs:
     steps:
       - name: Chekout Code
         uses: actions/checkout@v2
+      
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.8.1'
 
       - name: Download Package Dependencies
         uses: actions/download-artifact@v2
