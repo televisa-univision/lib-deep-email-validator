@@ -20,6 +20,16 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/yarn
+            **/node_modules
+          key: ${{ runner.os }}-build-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+
       - name: Install Packages
         run: yarn install --frozen-lockfile
         shell: bash
@@ -31,5 +41,4 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPMJS_TOKEN }}
           GH_TOKEN: ${{ secrets.PRIVATE_REPO_GITHUB_TOKEN }}
-        run: |
-          yarn semantic-release
+        run: yarn semantic-release
